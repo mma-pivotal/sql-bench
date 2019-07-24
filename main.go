@@ -2,16 +2,16 @@ package main
 
 import (
 	"database/sql"
-	"log"
+	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func insertRecord(db *sql.DB, count int) {
-	for i := 0; i++; i < count {
+	for i := 0; i < count; i++ {
 		_, err := db.Exec("insert into test_table (name,description) values ('2nd','2nd record');")
 		if err != nil {
-			b.Fatal(err)
+			fmt.Println(err)
 		}
 	}
 }
@@ -19,7 +19,7 @@ func insertRecord(db *sql.DB, count int) {
 func main() {
 	db, err := sql.Open("mysql", "root:1VPnSsXuX7vXpEYm86uzK7X5mAvLTs@tcp(10.193.28.29:3306)/mysql")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 	db.SetMaxOpenConns(10)
 	db.SetMaxIdleConns(10)
