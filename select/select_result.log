@@ -1,0 +1,79 @@
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/select$ go test -bench=. -cpu=1 -benchtime=10000x
+goos: linux
+goarch: amd64
+BenchmarkSelectMaxOpenConns1         	   10000	    444221 ns/op
+BenchmarkSelectMaxOpenConns2         	   10000	    291146 ns/op
+BenchmarkSelectMaxOpenConns4         	   10000	    410377 ns/op
+BenchmarkSelectMaxOpenConns8         	   10000	    395592 ns/op
+BenchmarkSelectMaxOpenConns16        	   10000	    327582 ns/op
+BenchmarkSelectMaxOpenConns30        	   10000	    295347 ns/op
+BenchmarkSelectMaxOpenConnsUnlimited 	   10000	    208586 ns/op
+BenchmarkMaxIdleConnsNone            	   10000	   1846071 ns/op
+BenchmarkMaxIdleConns1               	   10000	    348184 ns/op
+BenchmarkMaxIdleConns2               	   10000	    414666 ns/op
+BenchmarkMaxIdleConns4               	   10000	    300237 ns/op
+BenchmarkMaxIdleConns8               	   10000	    346116 ns/op
+BenchmarkMaxIdleConns16              	   10000	    326105 ns/op
+BenchmarkMaxIdleConns30              	   10000	    304739 ns/op
+PASS
+ok  	_/tmp/sql-bench/select	62.659s
+---
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/select$ go test -bench=. -cpu=2 -benchtime=10000x
+goos: linux
+goarch: amd64
+BenchmarkSelectMaxOpenConns1-2           	   10000	    447159 ns/op
+BenchmarkSelectMaxOpenConns2-2           	   10000	    103366 ns/op
+BenchmarkSelectMaxOpenConns4-2           	   10000	    108311 ns/op
+BenchmarkSelectMaxOpenConns8-2           	   10000	    113300 ns/op
+BenchmarkSelectMaxOpenConns16-2          	   10000	    137041 ns/op
+BenchmarkSelectMaxOpenConns30-2          	   10000	    104938 ns/op
+BenchmarkSelectMaxOpenConnsUnlimited-2   	   10000	    105763 ns/op
+BenchmarkMaxIdleConnsNone-2              	   10000	   1106941 ns/op
+BenchmarkMaxIdleConns1-2                 	   10000	    149232 ns/op
+BenchmarkMaxIdleConns2-2                 	   10000	    100876 ns/op
+BenchmarkMaxIdleConns4-2                 	   10000	    226318 ns/op
+BenchmarkMaxIdleConns8-2                 	   10000	    228842 ns/op
+BenchmarkMaxIdleConns16-2                	   10000	    221308 ns/op
+BenchmarkMaxIdleConns30-2                	   10000	    102374 ns/op
+PASS
+ok  	_/tmp/sql-bench/select	32.621s
+---
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/select$ go test -bench=. -cpu=4 -benchtime=10000x
+goos: linux
+goarch: amd64
+BenchmarkSelectMaxOpenConns1-4           	   10000	    413362 ns/op
+BenchmarkSelectMaxOpenConns2-4           	   10000	    237777 ns/op
+BenchmarkSelectMaxOpenConns4-4           	   10000	     71111 ns/op
+BenchmarkSelectMaxOpenConns8-4           	   10000	     66464 ns/op
+BenchmarkSelectMaxOpenConns16-4          	   10000	     76067 ns/op
+BenchmarkSelectMaxOpenConns30-4          	   10000	     61575 ns/op
+BenchmarkSelectMaxOpenConnsUnlimited-4   	   10000	     69320 ns/op
+BenchmarkMaxIdleConnsNone-4              	   10000	    676632 ns/op
+BenchmarkMaxIdleConns1-4                 	   10000	    116901 ns/op
+BenchmarkMaxIdleConns2-4                 	   10000	     82683 ns/op
+BenchmarkMaxIdleConns4-4                 	   10000	     75122 ns/op
+BenchmarkMaxIdleConns8-4                 	   10000	     78704 ns/op
+BenchmarkMaxIdleConns16-4                	   10000	     67894 ns/op
+BenchmarkMaxIdleConns30-4                	   10000	     94988 ns/op
+PASS
+ok  	_/tmp/sql-bench/select	21.968s
+---
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/select$ go test -bench=. -cpu=8 -benchtime=10000x
+goos: linux
+goarch: amd64
+BenchmarkSelectMaxOpenConns1-8           	   10000	    444962 ns/op
+BenchmarkSelectMaxOpenConns2-8           	   10000	    135413 ns/op
+BenchmarkSelectMaxOpenConns4-8           	   10000	     59612 ns/op
+BenchmarkSelectMaxOpenConns8-8           	   10000	     42894 ns/op
+BenchmarkSelectMaxOpenConns16-8          	   10000	     41827 ns/op
+BenchmarkSelectMaxOpenConns30-8          	   10000	     43447 ns/op
+BenchmarkSelectMaxOpenConnsUnlimited-8   	   10000	     43230 ns/op
+BenchmarkMaxIdleConnsNone-8              	   10000	    298955 ns/op
+BenchmarkMaxIdleConns1-8                 	   10000	     73969 ns/op
+BenchmarkMaxIdleConns2-8                 	   10000	     51715 ns/op
+BenchmarkMaxIdleConns4-8                 	   10000	     45867 ns/op
+BenchmarkMaxIdleConns8-8                 	   10000	     42946 ns/op
+BenchmarkMaxIdleConns16-8                	   10000	     40201 ns/op
+BenchmarkMaxIdleConns30-8                	   10000	     43986 ns/op
+PASS
+ok  	_/tmp/sql-bench/select	14.174s

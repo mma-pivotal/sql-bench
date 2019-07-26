@@ -1,0 +1,79 @@
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/insert$ go test -bench=. -cpu=1 -benchtime=1000x
+goos: linux
+goarch: amd64
+BenchmarkInsertMaxOpenConns1         	    1000	  13378508 ns/op
+BenchmarkInsertMaxOpenConns2         	    1000	  12779229 ns/op
+BenchmarkInsertMaxOpenConns4         	    1000	  12496943 ns/op
+BenchmarkInsertMaxOpenConns8         	    1000	  13132027 ns/op
+BenchmarkInsertMaxOpenConns16        	    1000	  12033417 ns/op
+BenchmarkInsertMaxOpenConns30        	    1000	  12761443 ns/op
+BenchmarkInsertMaxOpenConnsUnlimited 	    1000	  12959348 ns/op
+BenchmarkMaxIdleConnsNone            	    1000	  14853985 ns/op
+BenchmarkMaxIdleConns1               	    1000	  13467386 ns/op
+BenchmarkMaxIdleConns2               	    1000	  13191661 ns/op
+BenchmarkMaxIdleConns4               	    1000	  13097323 ns/op
+BenchmarkMaxIdleConns8               	    1000	  13564041 ns/op
+BenchmarkMaxIdleConns16              	    1000	  12604975 ns/op
+BenchmarkMaxIdleConns30              	    1000	  13427617 ns/op
+PASS
+ok  	_/tmp/sql-bench/insert	184.022s
+---
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/insert$ go test -bench=. -cpu=2 -benchtime=1000x
+goos: linux
+goarch: amd64
+BenchmarkInsertMaxOpenConns1-2           	    1000	  13335805 ns/op
+BenchmarkInsertMaxOpenConns2-2           	    1000	   9801711 ns/op
+BenchmarkInsertMaxOpenConns4-2           	    1000	  10870569 ns/op
+BenchmarkInsertMaxOpenConns8-2           	    1000	  11788635 ns/op
+BenchmarkInsertMaxOpenConns16-2          	    1000	  11480078 ns/op
+BenchmarkInsertMaxOpenConns30-2          	    1000	   9788654 ns/op
+BenchmarkInsertMaxOpenConnsUnlimited-2   	    1000	  10142348 ns/op
+BenchmarkMaxIdleConnsNone-2              	    1000	  10607784 ns/op
+BenchmarkMaxIdleConns1-2                 	    1000	  11768888 ns/op
+BenchmarkMaxIdleConns2-2                 	    1000	  12238374 ns/op
+BenchmarkMaxIdleConns4-2                 	    1000	  11423485 ns/op
+BenchmarkMaxIdleConns8-2                 	    1000	  11215067 ns/op
+BenchmarkMaxIdleConns16-2                	    1000	  11016516 ns/op
+BenchmarkMaxIdleConns30-2                	    1000	  12289972 ns/op
+PASS
+ok  	_/tmp/sql-bench/insert	158.007s
+---
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/insert$ go test -bench=. -cpu=4 -benchtime=1000x
+goos: linux
+goarch: amd64
+BenchmarkInsertMaxOpenConns1-4           	    1000	  14127697 ns/op
+BenchmarkInsertMaxOpenConns2-4           	    1000	  11696109 ns/op
+BenchmarkInsertMaxOpenConns4-4           	    1000	   5847452 ns/op
+BenchmarkInsertMaxOpenConns8-4           	    1000	   5612306 ns/op
+BenchmarkInsertMaxOpenConns16-4          	    1000	   5944073 ns/op
+BenchmarkInsertMaxOpenConns30-4          	    1000	   5496286 ns/op
+BenchmarkInsertMaxOpenConnsUnlimited-4   	    1000	   5815661 ns/op
+BenchmarkMaxIdleConnsNone-4              	    1000	   5582690 ns/op
+BenchmarkMaxIdleConns1-4                 	    1000	   5982315 ns/op
+BenchmarkMaxIdleConns2-4                 	    1000	   5691082 ns/op
+BenchmarkMaxIdleConns4-4                 	    1000	   6181716 ns/op
+BenchmarkMaxIdleConns8-4                 	    1000	   5994939 ns/op
+BenchmarkMaxIdleConns16-4                	    1000	   5828527 ns/op
+BenchmarkMaxIdleConns30-4                	    1000	   6310502 ns/op
+PASS
+ok  	_/tmp/sql-bench/insert	96.379s
+---
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/insert$ go test -bench=. -cpu=8 -benchtime=1000x
+goos: linux
+goarch: amd64
+BenchmarkInsertMaxOpenConns1-8           	    1000	  13194867 ns/op
+BenchmarkInsertMaxOpenConns2-8           	    1000	   9754206 ns/op
+BenchmarkInsertMaxOpenConns4-8           	    1000	   5653388 ns/op
+BenchmarkInsertMaxOpenConns8-8           	    1000	   2652210 ns/op
+BenchmarkInsertMaxOpenConns16-8          	    1000	   2694707 ns/op
+BenchmarkInsertMaxOpenConns30-8          	    1000	   3232809 ns/op
+BenchmarkInsertMaxOpenConnsUnlimited-8   	    1000	   3317186 ns/op
+BenchmarkMaxIdleConnsNone-8              	    1000	   3092684 ns/op
+BenchmarkMaxIdleConns1-8                 	    1000	   3096670 ns/op
+BenchmarkMaxIdleConns2-8                 	    1000	   2934532 ns/op
+BenchmarkMaxIdleConns4-8                 	    1000	   2885507 ns/op
+BenchmarkMaxIdleConns8-8                 	    1000	   2881351 ns/op
+BenchmarkMaxIdleConns16-8                	    1000	   3012359 ns/op
+BenchmarkMaxIdleConns30-8                	    1000	   3106634 ns/op
+PASS
+ok  	_/tmp/sql-bench/insert	61.725s

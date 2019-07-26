@@ -1,0 +1,81 @@
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/update$ go test -bench=. -cpu=1 -benchtime=10000x
+goos: linux
+goarch: amd64
+BenchmarkUpdateMaxOpenConns1         	   10000	    451302 ns/op
+BenchmarkUpdateMaxOpenConns2         	   10000	    234327 ns/op
+BenchmarkUpdateMaxOpenConns4         	   10000	    337171 ns/op
+BenchmarkUpdateMaxOpenConns8         	   10000	    359239 ns/op
+BenchmarkUpdateMaxOpenConns16        	   10000	    342391 ns/op
+BenchmarkUpdateMaxOpenConns30        	   10000	    275528 ns/op
+BenchmarkUpdateMaxOpenConnsUnlimited 	   10000	    224373 ns/op
+BenchmarkMaxIdleConnsNone            	   10000	   1617153 ns/op
+BenchmarkMaxIdleConns1               	   10000	    208869 ns/op
+BenchmarkMaxIdleConns2               	   10000	    204988 ns/op
+BenchmarkMaxIdleConns4               	   10000	    171558 ns/op
+BenchmarkMaxIdleConns8               	   10000	    205176 ns/op
+BenchmarkMaxIdleConns16              	   10000	    212871 ns/op
+BenchmarkMaxIdleConns30              	   10000	    197554 ns/op
+PASS
+ok  	_/tmp/sql-bench/update	50.473s
+---
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/update$ go test -bench=. -cpu=2 -benchtime=10000x
+goos: linux
+goarch: amd64
+BenchmarkUpdateMaxOpenConns1-2           	   10000	    474117 ns/op
+BenchmarkUpdateMaxOpenConns2-2           	   10000	    215576 ns/op
+BenchmarkUpdateMaxOpenConns4-2           	   10000	    184604 ns/op
+BenchmarkUpdateMaxOpenConns8-2           	   10000	    175631 ns/op
+BenchmarkUpdateMaxOpenConns16-2          	   10000	    121026 ns/op
+BenchmarkUpdateMaxOpenConns30-2          	   10000	    133630 ns/op
+BenchmarkUpdateMaxOpenConnsUnlimited-2   	   10000	    110849 ns/op
+BenchmarkMaxIdleConnsNone-2              	   10000	    781190 ns/op
+BenchmarkMaxIdleConns1-2                 	   10000	    133048 ns/op
+BenchmarkMaxIdleConns2-2                 	   10000	    207966 ns/op
+BenchmarkMaxIdleConns4-2                 	   10000	    237692 ns/op
+BenchmarkMaxIdleConns8-2                 	   10000	    133539 ns/op
+BenchmarkMaxIdleConns16-2                	   10000	    237736 ns/op
+BenchmarkMaxIdleConns30-2                	   10000	    111795 ns/op
+PASS
+ok  	_/tmp/sql-bench/update	32.652s
+---
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/update$ go test -bench=. -cpu=4 -benchtime=10000x
+goos: linux
+goarch: amd64
+BenchmarkUpdateMaxOpenConns1-4           	   10000	    485222 ns/op
+BenchmarkUpdateMaxOpenConns2-4           	   10000	    244279 ns/op
+BenchmarkUpdateMaxOpenConns4-4           	   10000	     84093 ns/op
+BenchmarkUpdateMaxOpenConns8-4           	   10000	     80035 ns/op
+BenchmarkUpdateMaxOpenConns16-4          	   10000	     75831 ns/op
+BenchmarkUpdateMaxOpenConns30-4          	   10000	     65929 ns/op
+BenchmarkUpdateMaxOpenConnsUnlimited-4   	   10000	     66971 ns/op
+BenchmarkMaxIdleConnsNone-4              	   10000	    807050 ns/op
+BenchmarkMaxIdleConns1-4                 	   10000	    116608 ns/op
+BenchmarkMaxIdleConns2-4                 	   10000	     78611 ns/op
+BenchmarkMaxIdleConns4-4                 	   10000	     72124 ns/op
+BenchmarkMaxIdleConns8-4                 	   10000	     98583 ns/op
+BenchmarkMaxIdleConns16-4                	   10000	     85322 ns/op
+BenchmarkMaxIdleConns30-4                	   10000	     90069 ns/op
+PASS
+ok  	_/tmp/sql-bench/update	24.586s
+---
+ubuntu@ubuntu-vcpu-8:/tmp/sql-bench/update$ go test -bench=. -cpu=8 -benchtime=10000x
+ok      _/tmp/sql-bench/update  50.473s
+goos: linux
+---
+goarch: amd64
+BenchmarkUpdateMaxOpenConns1-8           	   10000	    342712 ns/op
+BenchmarkUpdateMaxOpenConns2-8           	   10000	    170609 ns/op
+BenchmarkUpdateMaxOpenConns4-8           	   10000	     82091 ns/op
+BenchmarkUpdateMaxOpenConns8-8           	   10000	     48610 ns/op
+BenchmarkUpdateMaxOpenConns16-8          	   10000	     45528 ns/op
+BenchmarkUpdateMaxOpenConns30-8          	   10000	     45036 ns/op
+BenchmarkUpdateMaxOpenConnsUnlimited-8   	   10000	     43815 ns/op
+BenchmarkMaxIdleConnsNone-8              	   10000	    329815 ns/op
+BenchmarkMaxIdleConns1-8                 	   10000	     77939 ns/op
+BenchmarkMaxIdleConns2-8                 	   10000	     48605 ns/op
+BenchmarkMaxIdleConns4-8                 	   10000	     43520 ns/op
+BenchmarkMaxIdleConns8-8                 	   10000	     46987 ns/op
+BenchmarkMaxIdleConns16-8                	   10000	     47754 ns/op
+BenchmarkMaxIdleConns30-8                	   10000	     43416 ns/op
+PASS
+ok  	_/tmp/sql-bench/update	14.231s
