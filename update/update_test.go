@@ -7,7 +7,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-const dblink = "sqlbench:Password01.@tcp(10.193.76.17:3306)/mysql" //please setup your connection string here, must be DSN format
+const dblink = //please setup your connection string here, must be DSN format
 
 func updateRecord(b *testing.B, db *sql.DB) {
 	_, err := db.Exec("update test_table set name='1st' , description='1st record' where id=1;")
